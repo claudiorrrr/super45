@@ -4,10 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager | Super 45</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Change from netlify-cms to decap-cms -->
+  <!-- Use Decap CMS -->
   <script src="https://unpkg.com/@decapcms/app@3.0.0/dist/decap-cms.js"></script>
+
+  <script>
+    // GitHub OAuth configuration
+    window.CMS_MANUAL_INIT = true;
+
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'claudiorrrr/super45', // Your GitHub username and repo
+          branch: 'main',
+          auth_type: 'implicit', // Use implicit OAuth flow
+          auth_endpoint: 'https://api.netlify.com/auth/done',
+          app_id: '', // You'll need to create a GitHub OAuth app and put the client ID here
+          base_url: 'https://api.netlify.com'
+        },
+        media_folder: "src/images/uploads",
+        public_folder: "/images/uploads",
+        collections: [
+          // Your collections here
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
