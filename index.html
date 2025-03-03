@@ -1,10 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Super 45 Test</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super 45 - Música independiente desde Uruguay | Super 45</title>
+  <meta name="description" content="Música independiente desde Chile">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  
 </head>
 <body>
-  <h1>Super 45 Test Page</h1>
-  <p>This is a test page for GitHub Pages.</p>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <img src="/images/super45-logo.png" alt="Super 45">
+        </a>
+      </div>
+
+      <div class="nav-controls">
+        <a href="#" class="search-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </a>
+
+        <button class="menu-button" id="menu-toggle">
+          Menu
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="menu-header">
+      <div class="container">
+        <button class="close-menu" id="close-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="menu-content">
+      <div class="container">
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/">INICIO</a></li>
+            <li><a href="/about/">ACERCA</a></li>
+            <li><a href="/links/">LINKS</a></li>
+            <li><a href="/programas/">PROGRAMAS</a></li>
+            <li><a href="/contacto/">CONTACTO</a></li>
+          </ul>
+        </nav>
+
+        <div class="menu-social">
+          <a href="https://instagram.com/super45fm" target="_blank">Instagram</a>
+          <a href="https://twitter.com/super45fm" target="_blank">Twitter</a>
+          <a href="https://facebook.com/super45fm" target="_blank">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="support-banner">
+    <div class="container">
+      <p><span class="close-icon">×</span> Super45.fm es un proyecto <strong>colectivo y sin fines de lucro</strong> y se financia íntegramente gracias al <a href='#'>aporte de nuestros auditores</a>.</p>
+      <a href="https://app.reveniu.com/checkout-custom-link/JrBWvfY1K6ndB7NePlVWsqL1TdsVU2hB" class="support-button">¡Apóyanos!</a>
+    </div>
+  </div>
+
+  <main class="site-content">
+    
+<!-- Radio Player -->
+<div class="player-container">
+  <script src="https://embed.radio.co/player/984e607.js"></script>
+</div>
+
+<div class="schedule-section">
+  <h2 class="schedule-heading">DESTACAMOS PARA HOY</h2>
+
+  <!-- Debug info -->
+  
+    <!-- Schedule data exists -->
+  
+
+  <div class="schedule-table">
+    
+      
+        <div class="schedule-row">
+          <div class="schedule-time">00:00</div>
+          <div class="schedule-program">Nocturno</div>
+        </div>
+      
+        <div class="schedule-row">
+          <div class="schedule-time">10:00</div>
+          <div class="schedule-program">Repetición de Selección 45: Wilco</div>
+        </div>
+      
+        <div class="schedule-row">
+          <div class="schedule-time">13:00</div>
+          <div class="schedule-program">Jazz</div>
+        </div>
+      
+        <div class="schedule-row">
+          <div class="schedule-time">16:00</div>
+          <div class="schedule-program">Selección 45: Parcels (Calama)</div>
+        </div>
+      
+    
+  </div>
+
+  <div class="schedule-edit">
+    <a href="/admin/#/collections/schedule" class="edit-link">Edit</a>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> Super 45</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for menu functionality -->
+  <script src="/js/menu.js"></script>
+
 </body>
 </html>
