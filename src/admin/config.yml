@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: yourusername/super45-site
+  branch: main
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/page.njk" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "schedule"
+    label: "Schedule"
+    folder: "src/_data/schedule"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Time", name: "time", widget: "string" }
+      - { label: "Program", name: "program", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Day", name: "day", widget: "select", options: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Everyday"], default: "Everyday" }
+
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Site Settings"
+        name: "site"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string", default: "Super 45" }
+          - { label: "Site Description", name: "description", widget: "string", default: "Música independiente desde Uruguay" }
+          - { label: "Support Banner Text", name: "supportText", widget: "string", default: "Super45.fm es un proyecto colectivo y sin fines de lucro y se financia íntegramente gracias al aporte de nuestros auditores." }
+          - { label: "Support Button Text", name: "supportButton", widget: "string", default: "¡Apóyanos!" }
+          - { label: "Support Link", name: "supportLink", widget: "string", default: "#" }

@@ -1,0 +1,17 @@
+{
+  "name": "super45.fm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "build": "eleventy",
+  "start": "eleventy --serve",
+  "debug": "DEBUG=* eleventy"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

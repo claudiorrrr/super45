@@ -1,0 +1,16 @@
+<div class="schedule-section">
+  <h2 class="schedule-heading">DESTACAMOS PARA HOY</h2>
+
+  <div class="schedule-table">
+    {% for item in schedule %}
+      <div class="schedule-row">
+        <div class="schedule-time">{{ item.time }}</div>
+        <div class="schedule-program">{{ item.program }}</div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="schedule-edit">
+    <a href="/admin/#/collections/schedule" class="edit-link">Edit</a>
+  </div>
+</div>

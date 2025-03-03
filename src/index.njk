@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+title: Super 45 - Música independiente desde Uruguay
+---
+
+<!-- Radio Player -->
+<div class="player-container">
+  <script src="https://embed.radio.co/player/984e607.js"></script>
+</div>
+
+<div class="schedule-section">
+  <h2 class="schedule-heading">DESTACAMOS PARA HOY</h2>
+
+  <!-- Debug info -->
+  {% if scheduleData %}
+    <!-- Schedule data exists -->
+  {% else %}
+    <p style="color: red;">No schedule data found!</p>
+  {% endif %}
+
+  <div class="schedule-table">
+    {% if scheduleData and scheduleData.items.length > 0 %}
+      {% for item in scheduleData.items %}
+        <div class="schedule-row">
+          <div class="schedule-time">{{ item.time }}</div>
+          <div class="schedule-program">{{ item.program }}</div>
+        </div>
+      {% endfor %}
+    {% else %}
+      
+    {% endif %}
+  </div>
+
+  <div class="schedule-edit">
+    <a href="/admin/#/collections/schedule" class="edit-link">Edit</a>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "title": "Links",
+  "links": [
+    {
+      "title": "Instagram",
+      "url": "https://instagram.com/super45fm",
+      "platform": "instagram"
+    },
+    {
+      "title": "Twitter",
+      "url": "https://twitter.com/super45fm",
+      "platform": "twitter"
+    },
+    {
+      "title": "Facebook",
+      "url": "https://facebook.com/super45fm",
+      "platform": "facebook"
+    },
+    {
+      "title": "Spotify",
+      "url": "https://open.spotify.com/user/super45fm",
+      "platform": "spotify"
+    }
+  ]
+}

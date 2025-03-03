@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+title: Links
+permalink: /links/
+---
+<div class="links-container">
+  <div class="profile">
+    <img src="/images/super45-profile.jpg" alt="Super 45" class="profile-image">
+    <h1>Super 45</h1>
+    <p>Música independiente desde Uruguay</p>
+  </div>
+
+  <div class="links-list">
+    {% if links and links.links %}
+      {% for link in links.links %}
+      <a href="{{ link.url }}" class="link-button link-{{ link.platform }}" target="_blank" rel="noopener">
+        <span class="link-icon">
+          <img src="/images/icons/{{ link.platform }}.svg" alt="{{ link.platform }}">
+        </span>
+        <span class="link-text">{{ link.title }}</span>
+      </a>
+      {% endfor %}
+    {% else %}
+      <!-- Fallback if links data isn't available -->
+      <a href="https://instagram.com/super45fm" class="link-button link-instagram" target="_blank" rel="noopener">
+        <span class="link-icon">
+          <img src="/images/icons/instagram.svg" alt="instagram">
+        </span>
+        <span class="link-text">Instagram</span>
+      </a>
+      <a href="https://twitter.com/super45fm" class="link-button link-twitter" target="_blank" rel="noopener">
+        <span class="link-icon">
+          <img src="/images/icons/twitter.svg" alt="twitter">
+        </span>
+        <span class="link-text">Twitter</span>
+      </a>
+      <a href="https://facebook.com/super45fm" class="link-button link-facebook" target="_blank" rel="noopener">
+        <span class="link-icon">
+          <img src="/images/icons/facebook.svg" alt="facebook">
+        </span>
+        <span class="link-text">Facebook</span>
+      </a>
+    {% endif %}
+  </div>
+</div>
