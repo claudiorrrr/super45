@@ -12,10 +12,6 @@ use_graphql: true
 media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
-# Collections (keep your existing collections)
-collections:
-  # Your existing collections...
-
 
 # Media folder where uploaded images will be stored in your repo
 media_folder: "src/images/uploads"
