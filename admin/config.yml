@@ -1,0 +1,64 @@
+backend:
+  name: github
+  repo: claudiorrr/super45 # Your GitHub username and repo
+  branch: main # Your default branch
+  base_url: https://api.netlify.com # Keep this for GitHub OAuth
+  auth_endpoint: auth # Keep this for GitHub OAuth
+
+# Use GitHub's GraphQL API
+use_graphql: true
+
+# Media and public folders
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+
+# Media folder where uploaded images will be stored in your repo
+media_folder: "src/images/uploads"
+# Public path to the media
+public_folder: "/images/uploads"
+
+collections:
+  # Pages collection for managing static pages
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/page.njk" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Schedule collection for managing the radio schedule
+  - name: "schedule"
+    label: "Schedule"
+    files:
+      - label: "Daily Schedule"
+        name: "daily-schedule"
+        file: "src/_data/schedule.js"
+        fields:
+          - label: "Schedule Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.time}} - {{fields.program}}"
+            fields:
+              - { label: "Time", name: "time", widget: "string" }
+              - { label: "Program", name: "program", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Day", name: "day", widget: "select", options: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Everyday"], default: "Everyday" }
+
+  # Site settings collection
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Site Settings"
+        name: "site"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string", default: "Super 45" }
+          - { label: "Site Description", name: "description", widget: "string", default: "Música independiente desde Uruguay" }
+          - { label: "Support Banner Text", name: "supportText", widget: "string", default: "Super45.fm es un proyecto colectivo y sin fines de lucro y se financia íntegramente gracias al aporte de nuestros auditores." }
+          - { label: "Support Button Text", name: "supportButton", widget: "string", default: "¡Apóyanos!" }
+          - { label: "Support Link", name: "supportLink", widget: "string", default: "#" }
