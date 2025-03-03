@@ -1,12 +1,29 @@
 backend:
   name: github
-  repo: yourusername/super45-site
-  branch: main
+  repo: claudiorrr/super45 # Your GitHub username and repo
+  branch: main # Your default branch
+  base_url: https://api.netlify.com # Keep this for GitHub OAuth
+  auth_endpoint: auth # Keep this for GitHub OAuth
 
+# Use GitHub's GraphQL API
+use_graphql: true
+
+# Media and public folders
 media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
+# Collections (keep your existing collections)
 collections:
+  # Your existing collections...
+
+
+# Media folder where uploaded images will be stored in your repo
+media_folder: "src/images/uploads"
+# Public path to the media
+public_folder: "/images/uploads"
+
+collections:
+  # Pages collection for managing static pages
   - name: "pages"
     label: "Pages"
     folder: "src/pages"
@@ -18,17 +35,25 @@ collections:
       - { label: "Permalink", name: "permalink", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  # Schedule collection for managing the radio schedule
   - name: "schedule"
     label: "Schedule"
-    folder: "src/_data/schedule"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Time", name: "time", widget: "string" }
-      - { label: "Program", name: "program", widget: "string" }
-      - { label: "Description", name: "description", widget: "text", required: false }
-      - { label: "Day", name: "day", widget: "select", options: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Everyday"], default: "Everyday" }
+    files:
+      - label: "Daily Schedule"
+        name: "daily-schedule"
+        file: "src/_data/schedule.js"
+        fields:
+          - label: "Schedule Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.time}} - {{fields.program}}"
+            fields:
+              - { label: "Time", name: "time", widget: "string" }
+              - { label: "Program", name: "program", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Day", name: "day", widget: "select", options: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Everyday"], default: "Everyday" }
 
+  # Site settings collection
   - name: "settings"
     label: "Settings"
     files:
