@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
-  },
+  "build": "eleventy && cp .nojekyll _site/",
+  "start": "eleventy --serve",
+  "debug": "DEBUG=* eleventy"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
